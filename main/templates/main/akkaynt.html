@@ -1,0 +1,29 @@
+{% extends "main/layout.html" %}
+
+{% block title %}
+{{ title }} 
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="container6">
+        <h1>Личный кабинет ученика</h1>
+        {% for student in accounts %}
+        <p><strong>Логин:</strong> {{ student.user}}</p>
+        <p><strong>Класс:</strong> {{ student.class_name }}</p>
+        <p><strong>Предмет:</strong> {{ student.subject }}</p>
+        <a href="{% url 'index' %}">Выйти</a>
+        
+    </div>
+    {{ accounts }}
+  
+    {% empty %}
+    <p>Нет студентов для отображения.</p>
+    {% endfor %}
+</body>
+{% endblock %}
+
+
+
+
+

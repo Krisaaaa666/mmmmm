@@ -1,0 +1,86 @@
+{% extends "main/layout.html" %}
+
+{% block title %}
+{{ title }} 
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="container_reg">
+        <form method="post" action="{% url 'vxod' %}" class="auth-form">
+            {% csrf_token %}
+            <h2 style="text-align: center;">Авторизация</h2>
+            {{ form.as_p }}
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+    <p id="response"></p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.querySelector('.auth-form');
+            const responseDiv = document.getElementById('response');
+
+            if (loginForm) {
+                loginForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    const formData = new FormData(loginForm);
+
+                    try {
+                        // Отправка данных на сервер
+                        const response = await fetch('{% url 'vxod' %}', {
+                            method: 'POST',
+                            headers: {
+                                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                            },
+                            body: new URLSearchParams(formData)
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok) {
+                            // Успешный вход
+                            window.location.href = '{% url 'akkaynt' %}';  // Перенаправление после входа
+                        } else {
+                            // Ошибка авторизации
+                            showError(result.error || 'Ошибка входа');
+                        }
+                    } catch (error) {
+                        showError('Ошибка соединения с сервером');
+                        console.error('Error:', 'Ошибка соединения с сервером');
+                    }
+                });
+            }
+
+            function showError(message) {
+                if (responseDiv) {
+                    responseDiv.innerHTML = 
+                        <div class="alert alert-danger">
+                            ${message}
+                        </div>
+                    ;
+                    // Автоматическое скрытие через 5 секунд
+                    setTimeout(() => {
+                        responseDiv.innerHTML = '';
+                    }, 5000);
+                }
+            }
+        });
+    </script>
+</body>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+
+table{
+    flex: 1 0 auto;
+    margin: 0 auto;
+    text-align: left;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-bottom: -300px;
+}
+
+tbody{
+    margin-top: 200px;
+    display: table-row-group;
+    vertical-align: middle;
+    unicode-bidi: isolate;
+    border-color: inherit;
+    margin-bottom: 300px;
+}
+
+body {
+    margin: 0; /* Убираем стандартные отступы */
+}
+
+table {
+    width: 650px;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    
+}
+
+.table-container6 {
+    position: absolute;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-basis: 100%;
+
+    margin: 920px auto;
+    /* Установите фиксированную ширину или максимальную ширину */
+    width: 100%; /* Или max-width: 600px; */
+
+    display: grid;
+    place-items: center;
+
+
+    margin-top: 1000px;
+    margin-left: 80px;
+    color: rgb(120,96,72);
+    word-wrap: break-word;
+}
+
+.container{ 
+    margin-left: 1000px;
+    position: absolute;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-basis: 100%;
+    color: rgb(120,96,72);
+    
+    margin-top: 320px;
+
+    width: 800px; /* задайте нужную ширину */
+    padding: 3px; /* отступы внутри блока */
+    word-wrap: break-word;
+}
+
+.table-container2{
+    margin: 1100px auto;
+    /* Установите фиксированную ширину или максимальную ширину */
+    width: 100%; /* Или max-width: 600px; */
+    display: grid;
+    place-items: center;
+
+    margin-left: 0px;
+    position: absolute;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-basis: 100%;
+    color: rgb(120,96,72);
+    
+    margin-top: 1800px;
+
+    width: 800px; /* задайте нужную ширину */
+    padding: 3px; /* отступы внутри блока */
+    word-wrap: break-word;
+}
+
+.bebe{
+    margin: 1100px auto;
+    /* Установите фиксированную ширину или максимальную ширину */
+    width: 100%; /* Или max-width: 600px; */
+    display: grid;
+    place-items: center;
+
+    margin-left: 1020px;
+    position: absolute;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-basis: 100%;
+    color: rgb(120,96,72);
+    
+    margin-top: 1580px;
+
+    width: 800px; /* задайте нужную ширину */
+    padding: 3px; /* отступы внутри блока */
+    word-wrap: break-word;
+}
